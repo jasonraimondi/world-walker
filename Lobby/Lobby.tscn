@@ -10,9 +10,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBox" type="VBoxContainer" parent="."]
-margin_right = 200.0
-margin_bottom = 42.0
+[node name="YSort" type="YSort" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="YSort"]
+margin_left = -26.9796
+margin_top = -37.7551
+margin_right = 1053.02
+margin_bottom = 638.245
+color = Color( 0.145098, 0.678431, 0.843137, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="YSort"]
+margin_left = 736.448
+margin_top = 339.004
+margin_right = 772.448
+margin_bottom = 357.004
+rect_scale = Vector2( 6.52659, 6.52659 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinButton" type="TextureButton" parent="YSort/HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 3 )
+
+[node name="CreateButton" type="TextureButton" parent="YSort/HBoxContainer"]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 2 )
+
+[node name="VBox" type="VBoxContainer" parent="YSort"]
+margin_left = 40.4086
+margin_top = 121.226
+margin_right = 240.409
+margin_bottom = 163.226
 rect_min_size = Vector2( 200, 0 )
 rect_scale = Vector2( 4.66412, 4.66412 )
 custom_constants/separation = 3
@@ -21,7 +56,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NameLabel" type="Label" parent="VBox"]
+[node name="NameLabel" type="Label" parent="YSort/VBox"]
 margin_right = 200.0
 margin_bottom = 14.0
 text = "Name:"
@@ -29,7 +64,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NameInput" type="LineEdit" parent="VBox"]
+[node name="NameInput" type="LineEdit" parent="YSort/VBox"]
 margin_top = 17.0
 margin_right = 200.0
 margin_bottom = 41.0
@@ -38,27 +73,6 @@ caret_blink_speed = 0.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 299.0
-margin_top = 238.0
-margin_right = 335.0
-margin_bottom = 256.0
-rect_scale = Vector2( 6.52659, 6.52659 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="JoinButton" type="TextureButton" parent="HBoxContainer"]
-margin_right = 16.0
-margin_bottom = 18.0
-texture_normal = ExtResource( 3 )
-
-[node name="CreateButton" type="TextureButton" parent="HBoxContainer"]
-margin_left = 20.0
-margin_right = 36.0
-margin_bottom = 18.0
-texture_normal = ExtResource( 2 )
-[connection signal="text_changed" from="VBox/NameInput" to="." method="_on_NameInput_text_changed"]
-[connection signal="pressed" from="HBoxContainer/JoinButton" to="." method="_on_JoinButton_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreateButton" to="." method="_on_CreateButton_pressed"]
+[connection signal="pressed" from="YSort/HBoxContainer/JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="pressed" from="YSort/HBoxContainer/CreateButton" to="." method="_on_CreateButton_pressed"]
+[connection signal="text_changed" from="YSort/VBox/NameInput" to="." method="_on_NameInput_text_changed"]
