@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Lobby/Lobby.gd" type="Script" id=1]
+[ext_resource path="res://Assets/tile_0158.png" type="Texture" id=2]
+[ext_resource path="res://Assets/tile_0050.png" type="Texture" id=3]
+
+[node name="Lobby" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="."]
+margin_right = 200.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 200, 0 )
+rect_scale = Vector2( 4.66412, 4.66412 )
+custom_constants/separation = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="VBox"]
+margin_right = 200.0
+margin_bottom = 14.0
+text = "Name:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameInput" type="LineEdit" parent="VBox"]
+margin_top = 17.0
+margin_right = 200.0
+margin_bottom = 41.0
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 299.0
+margin_top = 238.0
+margin_right = 335.0
+margin_bottom = 256.0
+rect_scale = Vector2( 6.52659, 6.52659 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinButton" type="TextureButton" parent="HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 3 )
+
+[node name="CreateButton" type="TextureButton" parent="HBoxContainer"]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 2 )
+[connection signal="text_changed" from="VBox/NameInput" to="." method="_on_NameInput_text_changed"]
+[connection signal="pressed" from="HBoxContainer/JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreateButton" to="." method="_on_CreateButton_pressed"]

@@ -5,9 +5,9 @@ export (int) var speed = 50
 
 var velocity = Vector2()
 
-func _ready():
+#func _ready():
 #	position = Vector2(get_viewport().size.x/2, get_viewport().size.y/2)
-	set_process(true)
+#	set_process(true)
 
 func _process(delta):
 	get_input()
