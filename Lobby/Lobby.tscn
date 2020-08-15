@@ -36,11 +36,37 @@ margin_right = 16.0
 margin_bottom = 18.0
 texture_normal = ExtResource( 3 )
 
+[node name="JoinLabel" type="Label" parent="HBoxContainer/JoinButton"]
+margin_left = -1.71983
+margin_top = 16.8543
+margin_right = 38.2802
+margin_bottom = 30.8543
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Join"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CreateButton" type="TextureButton" parent="HBoxContainer"]
 margin_left = 20.0
 margin_right = 36.0
 margin_bottom = 18.0
 texture_normal = ExtResource( 2 )
+
+[node name="CreateLabel" type="Label" parent="HBoxContainer/CreateButton"]
+margin_left = -2.45772
+margin_top = 17.1141
+margin_right = 38.5423
+margin_bottom = 31.1141
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Create"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBox" type="VBoxContainer" parent="."]
 margin_left = 40.4086
